@@ -1,0 +1,14 @@
+@startuml
+skin rose
+[*] -> Initial
+Initial -> StartState
+StartState -> Spawn
+Spawn -> Moving
+Moving --> Shifting
+Shifting --> Moving
+Moving --> PauseState
+Moving --> Spawn
+Moving -> GameOver
+PauseState -> Moving
+GameOver -> [*]
+@enduml
